@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker build -t $IMAGE_NAME --build-arg "ANSIBLE_VERSION=$(echo ${DOCKER_TAG} | sed -e "s/version-//g")" .
