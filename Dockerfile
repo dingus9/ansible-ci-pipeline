@@ -8,7 +8,7 @@ RUN apk --update add --virtual build-dependencies \
 RUN pip3 install --upgrade pip cffi
 
 RUN echo "Build for ANSIBLE_VERSION: ${ANSIBLE_VERSION}" \
-  && pip3 install ansible==${ANSIBLE_VERSION} boto3==1.16.25
+  && pip3 install ansible==${ANSIBLE_VERSION} boto3==1.16.25 paramiko==2.7.2
 RUN ansible-galaxy collection install amazon.aws ansible.posix
 
 ENTRYPOINT ["/bin/sh", "-c"]
